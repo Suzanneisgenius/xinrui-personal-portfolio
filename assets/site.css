@@ -372,3 +372,6 @@ pre.code { background: var(--code-bg); padding: 14px 16px; border-radius: 4px; o
 .spy-number.recent .spy-proportion span { background: var(--spy-coral); }
 .spy-number-note { font-size: 13px; color: var(--spy-muted); }
 @media (max-width: 560px) { .spy-number-grid { gap: 14px; } .spy-number strong { font-size: 28px; } }
+
+/* CV links stay hidden until cv/Xinrui_Song_CV.pdf answers a HEAD request (see site.js) */
+.cv-link[hidden] { display: none; }

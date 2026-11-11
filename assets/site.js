@@ -7,7 +7,7 @@
     { id: 'olist-delivery-promises', year: '2026', type: 'Independent research', role: 'Research question, quantile derivation, pre-registered design, evaluation',
       question: 'How many days should an online shop promise for delivery, and does a better forecast let it promise fewer?',
       evidence: 'In historical replay on 12,045 Brazilian orders, promising the 90% quantile of delivery time instead of the mean raised on-time arrival from 65.5% to 91.4%, in exchange for more spare days on orders that arrive early.',
-      roleShort: 'My project from question to write-up: the quantile derivation, the pre-registration, the evaluation design and the code. AI tools helped refine parts of the code.',
+      roleShort: 'My project from question to write-up: the quantile derivation, the pre-registration, three candidate policies (a per-state quantile rule, linear quantile regression and gradient boosting) with conformal-style calibration, a logistic late-risk ranker, and the code with its 362 tests. AI tools helped refine parts of the code.',
       summary: 'Under a 9:1 late-to-early cost ratio, promising the 90% quantile of delivery time instead of the mean cut expected loss by 34% and raised on-time coverage from 65.5% to 91.4% on 12,045 orders. A pre-registered comparison then tests whether a lower-loss model promises fewer days.',
       tools: 'Python, pandas, scikit-learn, DuckDB' },
     { id: 'health-dashboard', year: '2025–26', type: 'Course project, reanalysed', role: 'Introduction, narrative and map in the original; specifications and review in the reanalysis',
@@ -341,4 +341,12 @@
 
   const tm = location.hash.match(/^#t\/([a-z]+)/);
   if (tm) openTab(tm[1], { instant: true });
+  /* CV: the links carry `hidden` in the HTML and appear only when the file is actually there */
+  (function revealCV() {
+    const links = document.querySelectorAll('.cv-link');
+    if (!links.length || !window.fetch) return;
+    fetch('cv/Xinrui_Song_CV.pdf', { method: 'HEAD', cache: 'no-store' })
+      .then(r => { if (r.ok) links.forEach(el => el.hidden = false); })
+      .catch(() => {});
+  })();
 })();
