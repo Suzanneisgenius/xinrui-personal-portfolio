@@ -1,4 +1,4 @@
-# HANDOFF — Xinrui Song application site (data-science version, v8.9, 2026-11-11)
+# HANDOFF — Xinrui Song application site (data-science version, v8.10, 2026-11-12)
 
 Read this before changing anything. Static site, no build step, no dependencies. Then read `docs/SKILL-minimal-portfolio-design.md` for the design system behind it.
 
